@@ -60,10 +60,10 @@ text_clf.fit(parsed_data, labels)
 parsed_data_predicted = parsed_add[:10000]
 labels_predicted = labels_add[:10000]
 
-predicted = text_clf.predict(parsed_data_predicted)
-#for word in predicted:
-#   pred_test.write(word+'\n')
+#predicted = text_clf.predict(parsed_data_predicted)
+for word in predicted:
+   pred_test.write(word+'\n')
 
 
-print(np.mean(predicted == labels_predicted))
+#print(np.mean(predicted == labels_predicted))
 
