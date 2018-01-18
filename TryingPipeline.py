@@ -53,12 +53,9 @@ for i in range(n):
 from sklearn.pipeline import Pipeline
 text_clf = Pipeline([('vect', CountVectorizer()),
                     ('tfidf', TfidfTransformer()),
-                     ('clf-svm', SGDClassifier(loss="log", penalty="l2", epsilon=0.0001, alpha = 0.0000001))])
+                     ('clf-svm', SGDClassifier(loss="hinge", epsilon=0.01, alpha = 0.00001))])
 
 text_clf.fit(parsed_data, labels)
-
-parsed_data_predicted = parsed_add[:10000]
-labels_predicted = labels_add[:10000]
 
 #predicted = text_clf.predict(parsed_data_predicted)
 for word in predicted:
